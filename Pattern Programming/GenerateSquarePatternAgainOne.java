@@ -5,7 +5,7 @@ public class GenerateSquarePatternAgainOne {
         System.out.println("Enter the value : ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        // call the function 
+        // call the function
         PrintPattern(n);
 
     }
