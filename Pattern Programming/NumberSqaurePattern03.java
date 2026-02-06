@@ -10,12 +10,12 @@ public class NumberSqaurePattern03{
     }
 
     public static void PrintingPattern(int n){
-        int value = 5;
-        for(int i = 1; i <= n; i++){      
+        for(int i = 1; i <= n; i++){    
+            int value = 5;  
             for(int j = 1; j <= n; j++){
                 System.out.print(value);
+                value--;
             }
-            value--;
             System.out.println();
         }
     }
