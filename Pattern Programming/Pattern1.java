@@ -1,21 +1,25 @@
 import java.util.*;
 
-public class SquareNumberPattern {
+public class Pattern1{
     public static void main(String[] args){
+        System.out.println("Enter the value of the n : ");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of n : ");
         int n = scanner.nextInt();
         // System.out.println(n);
-        // call the function
-        SquareSerielNumberPrintern(n);
+        PrintPattern(n);
     }
-    public static void SquareSerielNumberPrintern (int n) {
+
+    public static void PrintPattern(int n){
+
         for(int i = 1; i <= n; i++){
+            int counter = 1;
             for(int j = 1; j <= n; j++){
-                System.out.print(j + " ");
+                if(counter == j + 1){
+                    counter++;
+                }
+                System.out.print(counter);
             }
             System.out.println();
         }
-        // return 0;
     }
 }
