@@ -24,7 +24,7 @@ public class Learning {
                 System.out.println("Enter the two prime Numbers : ");
                 int isPrimeNumberOne = scanner.nextInt();
                 int isPrimeNumberTwo = scanner.nextInt();
-                isPrimeNumberBetweenTwoValue(isPrimeNumberOne, isPrimeNumberTwo);
+                // isPrimeNumberBetweenTwoValue(isPrimeNumberOne, isPrimeNumberTwo);
             default: 
                 System.out.println("Enter the valid Number");
                 break;
@@ -32,11 +32,11 @@ public class Learning {
     }
 
     
-    public static string isPrimeNumberBetweenTwoValue(int n, int m){
-        for(int i = 0; i <= n; i++){
+    // public static string isPrimeNumberBetweenTwoValue(int n, int m){
+    //     for(int i = 0; i <= n; i++){
             
-        }
-    }
+    //     }
+    // }
 
     public static String isPrime(int n) {
 
