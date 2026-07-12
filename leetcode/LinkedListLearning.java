@@ -11,6 +11,12 @@ public class LinkedListLearning {
         }
         ListNode head = insert(arr);
         printLinkedList(head);
+
+        int target = scanner.nextInt();
+
+        removeTargetValue(head, target);
+
+        printLinkedList(head);
         scanner.close();
     }
 
@@ -22,7 +28,6 @@ public class LinkedListLearning {
             current.next = temp;
             current = temp;
         }
-
         return head;
     }
 
@@ -36,6 +41,19 @@ public class LinkedListLearning {
                 System.out.print(current.val);
             }
             current = current.next;
+        }
+    }
+
+    public static void removeTargetValue(ListNode head, int target) {
+        ListNode current = head;
+        ListNode temp = head;
+
+        while (current != null) {
+            if(current.val == target) {
+                temp = current;
+                current = current.next;
+                temp.next = current;
+            }
         }
     }
 }
