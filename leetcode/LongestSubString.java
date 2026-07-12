@@ -9,19 +9,22 @@ public class LongestSubString {
 
         String input = scanner.next();
 
-        System.out.println(lengthOfLongestSubstring(input));
+        lengthOfLongestSubstring(input);
 
         scanner.close();
     }
 
      public static int lengthOfLongestSubstring(String s) {
 
-        HashSet<Character> set = new HashSet<>();
-        
         for (int i = 0; i < s.length(); i++) {
-            set.add(s.charAt(i));
+            for (int j = i + 1; j < s.length(); j++) {
+                for (int j2 = i; j2 < j; j2++) {
+                    System.out.print(s.charAt(j2));
+                }
+                System.out.println();
+            }
         }
 
-        return set.size();
+       return 0;
     }
 }
