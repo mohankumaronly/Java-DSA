@@ -12,25 +12,75 @@ public class LearningSlidingWindow {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
-        sliding(arr, 3);
+        System.out.println(findMaxAverage(arr, 4));
         scanner.close();
     }
 
     public static void sliding(int[] nums, int size) {
-        if (nums == null || nums.length < size) return;
+       for (int i = 0; i < size; i++) {
+        System.out.print(nums[i] + " ");
+       }
 
-        for (int i = 0; i < size; i++) {
+       System.out.println();
+
+       int left = 1;
+       int right = size;
+
+       while (right < nums.length) {
+           for (int i = left; i <= right; i++) {
             System.out.print(nums[i] + " ");
+           }
+           System.out.println();
+           left++;
+           right++;
+       }
+
+    }
+
+    public static void SumationWindow(int[] nums, int size){
+
+        int sum = 0;
+        int maxSum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += nums[i];
         }
+        maxSum = sum;
 
-        System.out.println();
+        int left = 0;
+        int right = size;
 
-        for (int right = size; right < nums.length; right++) {
-            int left = right - size + 1;
-            for (int i = left; i <= right; i++) {
-                System.out.print(nums[i] + " ");
+        while (right < nums.length) {
+            sum = sum - nums[left] + nums[right]; 
+            if(maxSum < sum) {
+                maxSum = sum;
             }
-            System.out.println();
+            left++;
+            right++;
         }
+        System.out.println(maxSum);
+    }
+
+    public static double findMaxAverage(int[] nums, int k) {
+        double maxAvgSum = 0;
+        double sum = 0;
+        for (int i = 0; i < k; i++) {
+            sum += nums[i];
+        }
+
+        maxAvgSum = sum;
+
+        int left = 0;
+        int right = k;
+
+        while (right < nums.length) {
+            sum = sum - nums[left] + nums[right];
+            if (maxAvgSum < sum) {
+                maxAvgSum = sum;
+            }
+            left++;
+            right++;
+        }
+
+        return maxAvgSum/k;
     }
 }
