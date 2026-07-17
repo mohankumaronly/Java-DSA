@@ -59,6 +59,10 @@ public class MergeTwoLinkedList {
         ListNode current = head.next;
 
         while (p1 != null || p2 != null) {
+
+            int val1 = 0;
+            int val2 = 0;
+
             if(p1.val < p2.val) {
                 current.val = p1.val;
                 p1 = p1.next;
